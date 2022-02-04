@@ -1,0 +1,22 @@
+@import './_reset.scss';
+
+.individual-movie-container {
+  display: flex;
+  margin-top: 40px;
+}
+
+.individual-movie-container > img {
+  width: 50%;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.movie-details {
+  display: flex;
+  justify-content: space-between;
+}
