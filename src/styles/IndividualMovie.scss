@@ -6,7 +6,8 @@
 }
 
 .individual-movie-container > img {
-  width: 50%;
+  width: 45%;
+  margin: 0 40px;
 }
 
 .movie-info {
@@ -19,4 +20,36 @@
 .movie-details {
   display: flex;
   justify-content: space-between;
+}
+
+.movie-details-subcontainer > p {
+  margin-bottom: 10px;
+}
+
+.movie-header-container {
+  text-align: center;
+}
+
+.movie-title {
+  font-size: 40px;
+}
+
+.movie-tagline {
+  font-size: 25px;
+}
+
+.movie-overview {
+  font-size: 20px;
+}
+
+.home-button {
+  width: 20%;
+  align-self: center;
+  height: 10%;
+  border-radius: 15px;
+  background-color: gold;
+  color: maroon;
+  border: none;
+  font-size: 21px;
+  font-weight: bold;
 }

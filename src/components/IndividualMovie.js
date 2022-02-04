@@ -18,21 +18,25 @@ const IndividualMovie = props => {
   return (
     <section className="individual-movie-container">
       <section className="movie-info">
-        <h2>{props.movie.title}</h2>
-        <h3>{props.movie.tagline}</h3>
-        <p>Overview: {props.movie.overview}</p>
+        <section className="movie-header-container">
+          <h2 className="movie-title">{props.movie.title}</h2>
+          <h3 className="movie-tagline">{props.movie.tagline}</h3>
+        </section>
+          <p className="movie-overview">Overview: {props.movie.overview}</p>
+
         <section className="movie-details">
-          <section>
+          <section className="movie-details-subcontainer">
             <p>Budget: {props.movie.budget}</p>
             <p>Genre: {props.movie.genres}</p>
             <p>Runtime: {props.movie.runtime} minutes</p>
           </section>
-          <section>
+          <section className="movie-details-subcontainer">
             <p>Revenue: {props.movie.revenue}</p>
             <p>Rating: {props.movie.average_rating}</p>
             <p>Release Date: {props.movie.release_date}</p>
           </section>
         </section>
+          <button className="home-button">Home</button>
 
       </section>
       <img src={props.movie.backdrop_path} alt={`Poster for ${props.movie.title}`}/>
