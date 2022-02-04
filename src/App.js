@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import Movies from './components/Movies'
 import movieData from './moviesData';
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,7 @@ class App extends Component {
     return (
       <main>
         <h1 className="App">Rotten Tomatillos</h1>
-        <Movies movie={this.state.movies} />
+        <Movies movies={this.state.movies} />
       </main>
     )
   }
