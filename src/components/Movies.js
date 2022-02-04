@@ -1,11 +1,34 @@
 import React from 'react'
+import MovieCard from './MovieCard'
 import '../styles/Movies.scss'
-import '../styles/MovieCard.scss'
 
 const Movies = props => {
+  console.log(props)
+  const allMovieCards = props.movies.movies.map(movie => {
+    return (
+      <MovieCard 
+        key={movie.id}
+        id={movie.id}
+        posterImg={movie.poster_path}
+        backdropImg={movie.backdrop_path}
+        title={movie.title}
+        averageRating={movie.average_rating}
+        releaseDate={movie.release_date}
+      />
+    )
+  })
   return (
     <div className="movie-card-container">
-      <div className="movie-card">
+      {allMovieCards}
+      {/* "id": 337401,
+      "poster_path": "https://image.tmdb.org/t/p/original//aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg",
+      "backdrop_path": "https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg",
+      "title": "Mulan",
+      "average_rating": 4.909090909090909,
+      "release_date": "2020-09-04" */}
+
+
+      {/* <div className="movie-card">
         <img src="https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg" />
         <h3>Money Plane</h3>
         <h4>Release Date: 1/2/2021</h4>
@@ -64,7 +87,7 @@ const Movies = props => {
         <h3>Peninsula</h3>
         <h4>Release Date: 10/21/2022</h4>
         <h4>Rating: 4.99</h4>
-      </div>
+      </div> */}
     </div>
   )
 }
