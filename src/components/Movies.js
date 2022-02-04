@@ -3,6 +3,14 @@ import MovieCard from './MovieCard'
 import '../styles/Movies.scss'
 
 const Movies = props => {
+  // const standardizeDates = props.movies.movies.filter(movie => {
+  //   const splitDate = movie.release_date.split('-')
+  //   let [year, month, day] = splitDate
+
+  //   movie.release_date = [month, day, year].join('-')
+    
+  //   return movie.release_date
+  // })
   const sortedMovies = props.movies.movies.sort((a, b) => (a.release_date < b.release_date) - (a.release_date > b.release_date))
   const allMovieCards = sortedMovies.map(movie => {
     return (
