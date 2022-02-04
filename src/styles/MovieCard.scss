@@ -1,0 +1,11 @@
+@import './reset.scss';
+
+.movie-card {
+  color: #FFF;
+}
+
+.movie-card > img {
+  // height: 10vh;
+  width: 80%;
+  border: 5px solid gold;
+}

@@ -13,7 +13,7 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <main className="main-container">
         <h1 className="App">Rotten Tomatillos</h1>
         <Movies movies={this.state.movies} />
       </main>
