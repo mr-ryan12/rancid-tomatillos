@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Movies.css'
+import '../styles/Movies.scss'
 
 const Movies = props => {
   return (

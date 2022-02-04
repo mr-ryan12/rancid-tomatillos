@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Movies from './components/Movies'
 import movieData from './moviesData';
-import './styles/App.css';
+import './styles/App.scss';
 
 class App extends Component {
   constructor() {
