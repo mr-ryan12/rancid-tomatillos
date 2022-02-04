@@ -7,7 +7,7 @@ const MovieCard = props => {
 
   return (
     <section className="movie-card" tabIndex={0}>
-      <img src={props.posterImg} alt={`Movie Poster for ${props.title}`} onClick={() => console.log('Hello!')}/>
+      <img src={props.posterImg} alt={`Movie Poster for ${props.title}`} onClick={() => props.findMovie(props.id)}/>
       <h2>{props.title}</h2>
       <h3>Release Date: {[month, day, year].join('-')}</h3>
       <h3>Rating: {props.averageRating.toFixed(2)}</h3>
@@ -15,4 +15,4 @@ const MovieCard = props => {
   )
 }
 
-export default MovieCard
+export default MovieCard  
