@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <main className="main-container">
         <h1>Rotten Tomatillos</h1>
+        <h2 className="opening-line">Where your imagination comes to life on the big screen</h2>
         <Movies movies={this.state.movies} />
       </main>
     )
