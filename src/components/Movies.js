@@ -3,7 +3,6 @@ import MovieCard from './MovieCard'
 import '../styles/Movies.scss'
 
 const Movies = props => {
-  console.log(props)
   const allMovieCards = props.movies.movies.map(movie => {
     return (
       <MovieCard 

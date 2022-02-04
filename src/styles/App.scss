@@ -1,8 +1,13 @@
-@import './_reset.scss';
+@import './_reset';
+@import './variables';
+
+* {
+	font-family: $headerFont;
+	color: $textColor;
+}
 
 h1 {
   text-align: center;
-  color: #FFF;
 }
 
 .main-container {
