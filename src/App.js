@@ -15,7 +15,6 @@ class App extends Component {
   }
 
   displayIndividualMovie = id => {
-    console.log(id)
     if (id) {
       this.setState({
         isSingleMovie: true,
