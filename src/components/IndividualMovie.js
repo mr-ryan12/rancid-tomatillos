@@ -15,6 +15,9 @@ import '../styles/IndividualMovie.scss'
 // tagline: "It's a movie!"
 
 const IndividualMovie = props => {
+  const splitDate = props.movie.release_date.split('-')
+  let [year, month, day] = splitDate
+
   return (
     <section className="individual-movie-container">
       <section className="movie-info">
@@ -26,14 +29,14 @@ const IndividualMovie = props => {
 
         <section className="movie-details">
           <section className="movie-details-subcontainer">
-            <p>Budget: {props.movie.budget}</p>
+            <p>Budget: {`$${Intl.NumberFormat('en-US').format(props.movie.budget)}`}</p>
             <p>Genre: {props.movie.genres}</p>
             <p>Runtime: {props.movie.runtime} minutes</p>
           </section>
           <section className="movie-details-subcontainer">
-            <p>Revenue: {props.movie.revenue}</p>
+            <p>Revenue: {`$${Intl.NumberFormat('en-US').format(props.movie.revenue)}`}</p>
             <p>Rating: {props.movie.average_rating}</p>
-            <p>Release Date: {props.movie.release_date}</p>
+            <p>Release Date: {[month, day, year].join('-')}</p>
           </section>
         </section>
           <button className="home-button">Home</button>
