@@ -1,8 +1,11 @@
 @import './_reset.scss';
+@import './_variables.scss';
+@import './mixins.scss';
 
 .individual-movie-container {
   display: flex;
   margin-top: 40px;
+  
 }
 
 .individual-movie-container > img {
@@ -11,20 +14,17 @@
 }
 
 .movie-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flexbox(column, nowrap, normal, space-between, normal);
   margin: 0 40px;
 }
 
 .movie-details {
-  display: flex;
-  justify-content: space-between;
+  @include flexbox(row, nowrap, normal, space-between, normal);
 }
 
 .movie-details-subcontainer > p {
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: $font20px;
 }
 
 .movie-header-container {
@@ -40,22 +40,14 @@
 }
 
 .movie-overview {
-  font-size: 20px;
+  font-size: $font20px;
 }
 
 .home-button {
-  width: 20%;
-  align-self: center;
-  height: 10%;
-  border-radius: 15px;
-  background-color: gold;
-  color: maroon;
-  border: none;
-  font-size: 21px;
-  font-weight: bold;
+  @include button($textColor, $backgroundColor);
 }
 
 .bold {
   font-weight: bold;
-  font-size: 20px;
+  font-size: $font20px;
 }

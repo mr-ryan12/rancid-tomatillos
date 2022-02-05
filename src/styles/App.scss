@@ -1,5 +1,6 @@
 @import './_reset';
 @import './variables';
+@import './keyframes';
 
 * {
 	font-family: $headerFont;
@@ -10,11 +11,16 @@ h1 {
   text-align: center;
   font-size: 60px;
   padding: 20px;
+  text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px gold;
+}
+.tracking-in-contract-bck-bottom {
+	-webkit-animation: tracking-in-contract-bck-bottom 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking-in-contract-bck-bottom 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .main-container {
   height: 100vh;
-  background-color: #420404;
+  background: $background;
   overflow-y: auto;
 }
 

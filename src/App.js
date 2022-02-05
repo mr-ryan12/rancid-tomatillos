@@ -56,9 +56,9 @@ class App extends Component {
   render() {
     return (
       <main className="main-container">
-        <h1>Rotten Tomatillos</h1>
+        <h1 className='tracking-in-contract-bck-bottom'>Rotten Tomatillos</h1>
         <h2 className="opening-line">Where your imagination comes to life on the big screen</h2>
-        {this.state.error ? <ErrorModal message={this.state.error}/> : null}
+        {this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null}
         {!this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>}
       </main>
     )
