@@ -1,0 +1,24 @@
+@import './_reset';
+@import './variables';
+
+* {
+	font-family: $headerFont;
+	color: $textColor;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  padding: 20px;
+}
+
+.main-container {
+  height: 100vh;
+  background-color: #420404;
+  overflow-y: auto;
+}
+
+.opening-line {
+  text-align: center;
+  font-size: 23px;
+}

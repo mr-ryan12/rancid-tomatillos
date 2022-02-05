@@ -1,0 +1,61 @@
+@import './_reset.scss';
+
+.individual-movie-container {
+  display: flex;
+  margin-top: 40px;
+}
+
+.individual-movie-container > img {
+  width: 45%;
+  margin: 0 40px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.movie-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-details-subcontainer > p {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.movie-header-container {
+  text-align: center;
+}
+
+.movie-title {
+  font-size: 40px;
+}
+
+.movie-tagline {
+  font-size: 25px;
+}
+
+.movie-overview {
+  font-size: 20px;
+}
+
+.home-button {
+  width: 20%;
+  align-self: center;
+  height: 10%;
+  border-radius: 15px;
+  background-color: gold;
+  color: maroon;
+  border: none;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 20px;
+}

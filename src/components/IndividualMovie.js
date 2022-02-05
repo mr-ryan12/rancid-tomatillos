@@ -1,0 +1,35 @@
+import React from 'react'
+import '../styles/IndividualMovie.scss'
+
+const IndividualMovie = props => {
+  const splitDate = props.movie.release_date.split('-')
+  let [year, month, day] = splitDate
+
+  return (
+    <section className="individual-movie-container">
+      <section className="movie-info">
+        <section className="movie-header-container">
+          <h2 className="movie-title">{props.movie.title}</h2>
+          <h3 className="movie-tagline">{props.movie.tagline}</h3>
+        </section>
+          <p className="movie-overview"><span className="bold">Overview:</span> {props.movie.overview}</p>
+        <section className="movie-details">
+          <section className="movie-details-subcontainer">
+            <p><span className="bold">Budget:</span> {`$${Intl.NumberFormat('en-US').format(props.movie.budget)}`}</p>
+            <p><span className="bold">Genre:</span> {props.movie.genres.join(', ')}</p>
+            <p><span className="bold">Runtime:</span> {props.movie.runtime} minutes</p>
+          </section>
+          <section className="movie-details-subcontainer">
+            <p><span className="bold">Revenue:</span> {`$${Intl.NumberFormat('en-US').format(props.movie.revenue)}`}</p>
+            <p><span className="bold">Rating:</span> {props.movie.average_rating}</p>
+            <p><span className="bold">Release Date:</span> {[month, day, year].join('-')}</p>
+          </section>
+        </section>
+          <button className="home-button" onClick={() => props.displayHomePage()}>Home</button>
+      </section>
+      <img src={props.movie.backdrop_path} alt={`Poster for ${props.movie.title}`}/>
+    </section>
+  )
+}
+
+export default IndividualMovie

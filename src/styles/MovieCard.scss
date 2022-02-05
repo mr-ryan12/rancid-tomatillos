@@ -1,0 +1,17 @@
+@import './reset.scss';
+
+.movie-card {
+  color: gold;
+  font-size: 20px;
+}
+
+.movie-card > img {
+  width: 80%;
+  border: 5px solid gold;
+  margin-bottom: 12px;
+  &:hover {
+    transform: scale(1.07);
+    transition-duration: .15s;
+  }
+  cursor: pointer;
+}
