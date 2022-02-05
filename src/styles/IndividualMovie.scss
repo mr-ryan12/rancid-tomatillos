@@ -24,6 +24,7 @@
 
 .movie-details-subcontainer > p {
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .movie-header-container {
@@ -52,4 +53,9 @@
   border: none;
   font-size: 21px;
   font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 20px;
 }

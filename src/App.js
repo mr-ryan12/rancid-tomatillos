@@ -27,7 +27,7 @@ class App extends Component {
           release_date: "2019-12-04",
           overview: "Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!",
           average_rating: 6,
-          genres: ["Drama"],
+          genres: ["Drama", "other things"],
           budget:63000000,
           revenue:100853753,
           runtime:139,
@@ -37,12 +37,16 @@ class App extends Component {
     }
   }
 
+  displayHomePage = () => {
+    this.setState({ isSingleMovie: false })
+  }
+
   render() {
     return (
       <main className="main-container">
         <h1>Rotten Tomatillos</h1>
         <h2 className="opening-line">Where your imagination comes to life on the big screen</h2>
-        {!this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie}/> : <IndividualMovie movie={this.state.movie} />}
+        {!this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>}
       </main>
     )
   }
