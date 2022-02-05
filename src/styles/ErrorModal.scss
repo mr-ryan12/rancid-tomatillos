@@ -1,3 +1,7 @@
+@import './_reset';
+@import './variables';
+@import './mixins.scss';
+
 .error-modal {
   position: fixed;
   z-index: 1;
@@ -7,9 +11,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox(row, nowrap, normal, center, center);
 }
 
 .error-modal-box {
@@ -20,21 +22,13 @@
   text-align: center;
   vertical-align: middle;
   line-height: 131px;
-  font-size: 20px;
+  font-size: $font20px;
 }
 
 .error-message {
-  color: maroon;
+  color: $backgroundColor;
 }
 
 .refresh-button {
-  width: 20%;
-  align-self: center;
-  height: 10%;
-  border-radius: 15px;
-  background-color: maroon;
-  color: gold;
-  border: none;
-  font-size: 21px;
-  font-weight: bold;
+   @include button($backgroundColor, $textColor);
 }

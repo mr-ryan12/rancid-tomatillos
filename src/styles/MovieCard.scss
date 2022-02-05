@@ -1,13 +1,14 @@
 @import './reset.scss';
+@import './variables.scss';
 
 .movie-card {
-  color: gold;
-  font-size: 20px;
+  color: $textColor;
+  font-size: $font20px;
 }
 
 .movie-card > img {
   width: 80%;
-  border: 5px solid gold;
+  border: 5px solid $textColor;
   margin-bottom: 12px;
   &:hover {
     transform: scale(1.07);
