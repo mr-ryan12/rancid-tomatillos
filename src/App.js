@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies1213')
       .then(response => {
         if (response.ok) {
           return response.json()
@@ -58,7 +58,7 @@ class App extends Component {
       <main className="main-container">
         <h1>Rotten Tomatillos</h1>
         <h2 className="opening-line">Where your imagination comes to life on the big screen</h2>
-        {this.state.error ? <ErrorModal message={this.state.error}/> : null}
+        {this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null}
         {!this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>}
       </main>
     )

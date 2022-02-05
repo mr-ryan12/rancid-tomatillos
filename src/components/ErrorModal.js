@@ -6,6 +6,7 @@ const ErrorModal = props => {
     <section className="error-modal">
       <section className="error-modal-box">
         <h2 className="error-message">{props.message}</h2>
+        <button className="refresh-button" onClick={() => props.displayHomePage()}>Refresh</button>
       </section>
     </section>
   )
