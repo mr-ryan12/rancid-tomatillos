@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Movies from './components/Movies'
-import movieData from './moviesData'
 import IndividualMovie from './components/IndividualMovie'
 import ErrorModal from './components/ErrorModal'
 import './styles/App.scss'
