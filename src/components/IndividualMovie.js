@@ -12,16 +12,16 @@ const IndividualMovie = props => {
           <h2 className="movie-title">{props.movie.title}</h2>
           <h3 className="movie-tagline">{props.movie.tagline}</h3>
         </section>
-          <p className="movie-overview"><span className="bold">Overview:</span> {props.movie.overview}</p>
+          <p className="movie-overview"><span className="bold">Overview:</span> {props.movie.overview === '' ? <p>No overview available for this movie at this time! Please submit your version of the movie overview <a href="http://www.turing.edu/contact" target="_blank">here</a></p> : props.movie.overview}</p>
         <section className="movie-details">
           <section className="movie-details-subcontainer">
             <p><span className="bold">Budget:</span> {`$${Intl.NumberFormat('en-US').format(props.movie.budget)}`}</p>
-            <p><span className="bold">Genre:</span> {props.movie.genres.join(', ')}</p>
+            <p><span className="bold">Genre:</span> {props.movie.genres.length === 0 ? 'It\'s a mystery...' : props.movie.genres.join(', ')}</p>
             <p><span className="bold">Runtime:</span> {props.movie.runtime} minutes</p>
           </section>
           <section className="movie-details-subcontainer">
             <p><span className="bold">Revenue:</span> {`$${Intl.NumberFormat('en-US').format(props.movie.revenue)}`}</p>
-            <p><span className="bold">Rating:</span> {props.movie.average_rating}</p>
+            <p><span className="bold">Rating:</span> {props.movie.average_rating.toFixed(2)}</p>
             <p><span className="bold">Release Date:</span> {[month, day, year].join('-')}</p>
           </section>
         </section>
