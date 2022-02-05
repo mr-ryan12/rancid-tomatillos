@@ -3,7 +3,7 @@ import Movies from './components/Movies'
 import movieData from './moviesData'
 import IndividualMovie from './components/IndividualMovie'
 import ErrorModal from './components/ErrorModal'
-import './styles/App.scss';
+import './styles/App.scss'
 
 class App extends Component {
   constructor() {
@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies1')
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => {
         if (response.ok) {
           return response.json()
@@ -34,22 +34,20 @@ class App extends Component {
   }
 
   displayIndividualMovie = id => {
-    if (id) {
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-        .then(response => {
-          if (response.ok) {
-            return response.json()
-          } else {
-            throw new Error('Something went wrong. Please refresh the page or try again later.')
-          }
-        })
-        .then(data => {
-          this.setState({ isSingleMovie: true, movie: data.movie })
-        })
-        .catch(error => {
-          this.setState({ error: error.message })
-        })
-    }
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(response => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error('Something went wrong. Please refresh the page or try again later.')
+        }
+      })
+      .then(data => {
+        this.setState({ isSingleMovie: true, movie: data.movie })
+      })
+      .catch(error => {
+        this.setState({ error: error.message })
+      })
   }
 
   displayHomePage = () => {
