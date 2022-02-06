@@ -54,13 +54,15 @@ class App extends Component {
   }
 
   render() {
-    //may need to pull the conditionals out of the return and put here.
+    const errorModal = this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null
+    const displayMovie = !this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>
+
     return (
       <main className="main-container">
         <h1 className='text-flicker-in-glow'>Rotten Tomatillos</h1>
         <h2 className="text-focus-in">Where your imagination comes to life on the big screen</h2>
-        {this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null}
-        {!this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>}
+        {errorModal}
+        {displayMovie}
       </main>
     )
   }
