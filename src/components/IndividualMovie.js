@@ -41,7 +41,9 @@ const IndividualMovie = props => {
         </section>
           <button className="home-button" onClick={() => props.displayHomePage()}>Home</button>
       </section>
-      <img src={props.movie.backdrop_path} alt={`Poster for ${props.movie.title}`}/>
+      <div className="image-container"> 
+        <img src={props.movie.backdrop_path.includes('NoPhotoAvailable') ? props.movie.poster_path : props.movie.backdrop_path} alt={`Poster for ${props.movie.title}`}/>
+      </div>
     </section>
   )
 }
