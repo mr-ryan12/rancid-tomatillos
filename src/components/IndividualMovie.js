@@ -15,6 +15,8 @@ const IndividualMovie = props => {
   const revenueFormat = props.movie.revenue === 0 ? 'N/A' : `$${Intl.NumberFormat('en-US').format(props.movie.revenue)}`
   const genresFormat = props.movie.genres.length === 0 ? 'It\'s a mystery...' : props.movie.genres.join(', ')
   const runtimeFormat = props.movie.runtime === 0 ? 'N/A' : `${props.movie.runtime} minutes`
+  const ratingFormat = props.movie.average_rating.toFixed(2)
+  
 
   return (
     <section className="individual-movie-container">
@@ -32,7 +34,7 @@ const IndividualMovie = props => {
           </section>
           <section className="movie-details-subcontainer">
             <p><span className="bold">Revenue:</span> {revenueFormat}</p>
-            <p><span className="bold">Rating:</span> {props.movie.average_rating.toFixed(2)}</p>
+            <p><span className="bold">Rating:</span> {ratingFormat}</p>
             <p><span className="bold">Release Date:</span> {[month, day, year].join('-')}</p>
           </section>
         </section>
