@@ -3,9 +3,9 @@ import '../styles/IndividualMovie.scss'
 
 const IndividualMovie = props => {
   const overviewDisplay = props.movie.overview === '' ? 
-      <p>
+      <>
         No overview available for this movie at this time! Please submit your version of the movie overview <a href="http://www.turing.edu/contact" target="_blank">here</a>
-      </p> 
+      </> 
       : props.movie.overview
 
   const budgetFormat = props.movie.budget === 0 ? 'N/A' : `$${Intl.NumberFormat('en-US').format(props.movie.budget)}`
