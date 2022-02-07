@@ -4,8 +4,7 @@ import '../styles/IndividualMovie.scss'
 const IndividualMovie = props => {
   const overviewDisplay = props.movie.overview === '' ? 
       <p>
-        No overview available for this movie at this time! Please submit your version of the movie overview 
-        <a href="http://www.turing.edu/contact" target="_blank">here</a>
+        No overview available for this movie at this time! Please submit your version of the movie overview <a href="http://www.turing.edu/contact" target="_blank">here</a>
       </p> 
       : props.movie.overview
 
@@ -18,6 +17,7 @@ const IndividualMovie = props => {
   const splitDate = props.movie.release_date.split('-')
   let [year, month, day] = splitDate
   const releaseDateFormat = [month, day, year].join('-')
+  const backdropDisplay = props.movie.backdrop_path.includes('NoPhotoAvailable') ? props.movie.poster_path : props.movie.backdrop_path
 
   return (
     <section className="individual-movie-container">
@@ -26,7 +26,7 @@ const IndividualMovie = props => {
           <h2 className="movie-title">{props.movie.title}</h2>
           <h3 className="movie-tagline">{props.movie.tagline}</h3>
         </section>
-          <p className="movie-overview"><span className="bold">Overview:</span>{overviewDisplay}</p>
+          <p className="movie-overview"><span className="bold">Overview: </span>{overviewDisplay}</p>
         <section className="movie-details">
           <section className="movie-details-subcontainer">
             <p><span className="bold">Budget:</span> {budgetFormat}</p>
@@ -42,7 +42,7 @@ const IndividualMovie = props => {
           <button className="home-button" onClick={() => props.displayHomePage()}>Home</button>
       </section>
       <div className="image-container"> 
-        <img src={props.movie.backdrop_path.includes('NoPhotoAvailable') ? props.movie.poster_path : props.movie.backdrop_path} alt={`Poster for ${props.movie.title}`}/>
+        <img src={backdropDisplay} alt={`Poster for ${props.movie.title}`}/>
       </div>
     </section>
   )
