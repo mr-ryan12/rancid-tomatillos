@@ -13,18 +13,35 @@ h1 {
   padding: 20px;
   text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px gold;
 }
-.tracking-in-contract-bck-bottom {
-	-webkit-animation: tracking-in-contract-bck-bottom 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	animation: tracking-in-contract-bck-bottom 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+
+h2 {
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
+h3 {
+  font-size: 14px;
+}
+
+.text-focus-in {
+  text-align: center;
+  font-size: 23px;
+	-webkit-animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+.text-flicker-in-glow {
+	-webkit-animation: text-flicker-in-glow 4s linear both;
+	animation: text-flicker-in-glow 4s linear both;
+}
 .main-container {
   height: 100vh;
   background: $background;
   overflow-y: auto;
 }
 
-.opening-line {
-  text-align: center;
-  font-size: 23px;
+.bolder {
+  font-weight: bold;
+  font-size: 14px;
 }

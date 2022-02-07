@@ -54,12 +54,15 @@ class App extends Component {
   }
 
   render() {
+    const errorModal = this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null
+    const displayMovie = !this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>
+
     return (
       <main className="main-container">
-        <h1 className='tracking-in-contract-bck-bottom'>Rotten Tomatillos</h1>
-        <h2 className="opening-line">Where your imagination comes to life on the big screen</h2>
-        {this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null}
-        {!this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>}
+        <h1 className='text-flicker-in-glow'>Rotten Tomatillos</h1>
+        <h2 className="text-focus-in">Where your imagination comes to life on the big screen</h2>
+        {errorModal}
+        {displayMovie}
       </main>
     )
   }

@@ -5,17 +5,23 @@
 .individual-movie-container {
   display: flex;
   margin-top: 40px;
-  
 }
 
-.individual-movie-container > img {
-  width: 45%;
-  margin: 0 40px;
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding: 0 40px;
+}
+
+.image-container > img {
+  max-height: 50vh;
 }
 
 .movie-info {
   @include flexbox(column, nowrap, normal, space-between, normal);
   margin: 0 40px;
+  flex: 1;
 }
 
 .movie-details {
