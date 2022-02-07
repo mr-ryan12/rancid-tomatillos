@@ -8,15 +8,23 @@
   
 }
 
-.individual-movie-container > img {
-  width: 45%;
-  margin: 0 40px;
-  max-height: 60vh;
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  // width:100%;
+  padding: 0 40px;
+}
+.image-container > img {
+  // width: 100%;
+  max-height: 50vh;
 }
 
 .movie-info {
   @include flexbox(column, nowrap, normal, space-between, normal);
   margin: 0 40px;
+  // width: 100%;
+  flex: 1;
 }
 
 .movie-details {
