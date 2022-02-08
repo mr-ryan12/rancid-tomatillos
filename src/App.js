@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Movies from './components/Movies'
 import IndividualMovie from './components/IndividualMovie'
 import ErrorModal from './components/ErrorModal'
+import  { getAllMovies } from './apiCalls'
 import './styles/App.scss'
 
 class App extends Component {
@@ -16,37 +17,52 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error('Something went wrong. Please refresh the page or try again later.')
-        }
-      })
-      .then(data => {
-        this.setState({ movies: data.movies })
-      })
-      .catch(error => {
-        this.setState({ error: error.message })
-      })
+    // fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    //   .then(response => {
+    //     if (response.ok) {
+    //       return response.json()
+    //     } else {
+    //       throw new Error('Something went wrong. Please refresh the page or try again later.')
+    //     }
+    //   })
+    //   .then(data => {
+    //     this.setState({ movies: data.movies })
+    //   })
+    //   .catch(error => {
+    //     this.setState({ error: error.message })
+    //   })
+    getAllMovies()
+      // .then(response => {
+      //   if (response.ok) {
+      //     return response.json()
+      //   } else {
+      //     throw new Error('Something went wrong. Please refresh the page or try again later.')
+      //   }
+      // })
+      // .then(data => {
+      //   this.setState({ movies: data.movies })
+      // })
+      // .catch(error => {
+      //   this.setState({ error: error.message })
+      // })
   }
 
   displayIndividualMovie = id => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error('Something went wrong. Please refresh the page or try again later.')
-        }
-      })
-      .then(data => {
-        this.setState({ isSingleMovie: true, movie: data.movie })
-      })
-      .catch(error => {
-        this.setState({ error: error.message })
-      })
+    // fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    //   .then(response => {
+    //     if (response.ok) {
+    //       return response.json()
+    //     } else {
+    //       throw new Error('Something went wrong. Please refresh the page or try again later.')
+    //     }
+    //   })
+    // getIndividualMovie(id)
+    //   .then(data => {
+    //     this.setState({ isSingleMovie: true, movie: data.movie })
+    //   })
+    //   .catch(error => {
+    //     this.setState({ error: error.message })
+    //   })
   }
 
   displayHomePage = () => {
