@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Movies from './components/Movies'
 import IndividualMovie from './components/IndividualMovie'
 import ErrorModal from './components/ErrorModal'
-import cleanData from './utils'
+import { cleanAllMoviesData, cleanIndividualMovieData } from './utils'
 import './styles/App.scss'
 
 class App extends Component {
@@ -26,9 +26,7 @@ class App extends Component {
         }
       })
       .then(data => {
-        console.log(data.movies)
-        this.setState({ movies: cleanData(data.movies) })
-        // this.setState({ movies: data.movies })
+        this.setState({ movies: cleanAllMoviesData(data.movies) })
       })
       .catch(error => {
         this.setState({ error: error.message })
@@ -45,7 +43,8 @@ class App extends Component {
         }
       })
       .then(data => {
-        this.setState({ isSingleMovie: true, movie: data.movie })
+        console.log(data.movie)
+        this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie) })
       })
       .catch(error => {
         this.setState({ error: error.message })

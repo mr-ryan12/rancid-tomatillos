@@ -1,4 +1,4 @@
-const cleanData = data => {
+const cleanAllMoviesData = data => {
     const cleanedData = data.map(movie => {
       const splitDate = movie.release_date.split('-')
       let [year, month, day] = splitDate
@@ -16,4 +16,21 @@ const cleanData = data => {
   return cleanedData;
 }
 
-export default cleanData
+const cleanIndividualMovieData = movie => {
+  return {
+    id: movie.id,
+    title: movie.title,
+    poster_path: movie.poster_path,
+    backdrop_path: movie.backdrop_path,
+    release_date: movie.release_date,
+    overview: movie.overview,
+    genres: movie.genres,
+    budget: movie.budget,
+    revenue: movie.revenue,
+    runtime: movie.runtime,
+    tagline: movie.tagline,
+    average_rating: movie.average_rating
+  }
+}
+
+export { cleanAllMoviesData, cleanIndividualMovieData }
