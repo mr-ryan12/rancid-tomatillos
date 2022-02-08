@@ -11,22 +11,22 @@ describe('Main Page User Flow', () => {
   });
 
   
-  it('should display the poster image', () => {
+  it('Should display the poster image', () => {
     cy.get('img')
       .should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//4BgSWFMW2MJ0dT5metLzsRWO7IJ.jpg')
   });
   
-  it('should display the movie title', () => {
+  it('Should display the movie title', () => {
     cy.get('.poster-movie-title')
       .contains('Cats & Dogs 3: Paws Unite')
   });
 
-  it('should have an alt text for the image', () => {
+  it('Should have an alt text for the image', () => {
     cy.get('img')
       .should('have.attr', 'alt', 'Movie Poster for Cats & Dogs 3: Paws Unite')
   });
   
-  it('should display the release date', () => {
+  it('Should display the release date', () => {
     cy.get('.poster-release-date')
       .contains('10-02-2020')
   });

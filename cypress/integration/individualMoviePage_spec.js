@@ -33,7 +33,7 @@ describe('Main Page User Flow', () => {
 });
 
 describe('Sad path testing', () => {
-
+  
   beforeEach(() => {
     cy.visit('http://localhost:3000')
       .contains('.movie-card', 'Maratón After')
