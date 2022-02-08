@@ -43,8 +43,7 @@ class App extends Component {
         }
       })
       .then(data => {
-        console.log(data.movie)
-        this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie) })
+        this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie)})
       })
       .catch(error => {
         this.setState({ error: error.message })
