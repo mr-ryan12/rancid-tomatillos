@@ -11,9 +11,9 @@ const MovieCard = props => {
   return (
     <section className="movie-card" tabIndex={0}>
       <img src={props.posterImg} alt={`Movie Poster for ${props.title}`} onClick={() => props.findMovie(props.id)}/>
-      <h2>{props.title}</h2>
-      <h3><span className='bolder'>Release Date: </span>{releaseDateFormat2}</h3>
-      <h3><span className='bolder'>Rating: </span>{ratingFormat2}</h3>
+      <h2 className="poster-movie-title">{props.title}</h2>
+      <h3 className="poster-release-date"><span className='bolder'>Release Date: </span>{releaseDateFormat2}</h3>
+      <h3 className="poster-average-rating"><span className='bolder'>Rating: </span>{ratingFormat2}</h3>
     </section>
   )
 }
