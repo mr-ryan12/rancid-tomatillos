@@ -1,9 +1,4 @@
 describe('Individual Movie Page User Flow', () => {
-
-  // build intercept - make own json file with one movie
-  // check to see if it holds all data
-  // error handling testing
-
   beforeEach(() => {
     cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/*', { fixture: 'individualHappyMovie.json' })
     cy.visit('http://localhost:3000')
@@ -55,7 +50,6 @@ describe('Sad path testing', () => {
 
   it('Should display movie details for the individual movie selected', () => {
     cy.get('.individual-movie-container').contains('Maratón After')
-    // cy.get('.individual-movie-container').contains(null)
     cy.get('.individual-movie-container').contains('Overview: No overview available at this time')
     cy.get('.individual-movie-container').contains('Budget: N/A')
     cy.get('.individual-movie-container').contains('Genre: It\'s a mystery...')

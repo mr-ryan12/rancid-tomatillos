@@ -30,11 +30,6 @@ describe('Main Page User Flow', () => {
       .contains('09-29-2020')
   });
 
-  // Find out how to test for formatting
-  // it('Should display the date in the correct format', () => {
-
-  // });
-
   it('Should have a clickable poster image', () => {
     cy.contains('.movie-card', 'Money Plane')
       .find('img')
@@ -68,9 +63,4 @@ describe('Main Page User Flow', () => {
       .eq(1)
       .contains('09-04-2020')
   });
-
-  it('should display error modal yaddah yaddah', () => {
-    cy.get('http://localhostestwiththemostest:3000')
-      .contains('Something went wrong. Please refresh the page or try again later.')
-  })
 });
