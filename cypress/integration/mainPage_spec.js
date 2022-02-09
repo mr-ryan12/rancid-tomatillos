@@ -1,8 +1,6 @@
-
-
 describe('Main Page User Flow', () => {
   beforeEach(() => {
-    cy.intercept("https://rancid-tomatillos.herokuapp.com/api/v2/movies", { fixture: 'movies.json'})
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json'})
     cy.visit('http://localhost:3000')
   })
 
@@ -70,4 +68,9 @@ describe('Main Page User Flow', () => {
       .eq(1)
       .contains('09-04-2020')
   });
+
+  it('should display error modal yaddah yaddah', () => {
+    cy.get('http://localhostestwiththemostest:3000')
+      .contains('Something went wrong. Please refresh the page or try again later.')
+  })
 });

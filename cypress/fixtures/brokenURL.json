@@ -1,0 +1,51 @@
+{
+  "body": {
+      "error": "No movie found with id:1234"
+  },
+  "headers": {
+      "server": "Cowboy",
+      "connection": "keep-alive",
+      "x-powered-by": "Express",
+      "access-control-allow-origin": "*",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "39",
+      "etag": "W/\"27-gP+Ku2v79nJw9Tlq8RK2q07rXQA\"",
+      "date": "Wed, 09 Feb 2022 04:50:43 GMT",
+      "via": "1.1 vegur"
+  },
+  "status": 404,
+  "statusText": "Not Found",
+  "isOkStatusCode": false,
+  "requestHeaders": {
+      "Connection": "keep-alive",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate"
+  },
+  "duration": 67,
+  "allRequestResponses": [
+      {
+          "Request Body": null,
+          "Request Headers": {
+              "Connection": "keep-alive",
+              "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36",
+              "accept": "*/*",
+              "accept-encoding": "gzip, deflate"
+          },
+          "Request URL": "https://rancid-tomatillos.herokuapp.com/api/v2/movies/1234",
+          "Response Body": "{\"error\":\"No movie found with id:1234\"}",
+          "Response Headers": {
+              "server": "Cowboy",
+              "connection": "keep-alive",
+              "x-powered-by": "Express",
+              "access-control-allow-origin": "*",
+              "content-type": "application/json; charset=utf-8",
+              "content-length": "39",
+              "etag": "W/\"27-gP+Ku2v79nJw9Tlq8RK2q07rXQA\"",
+              "date": "Wed, 09 Feb 2022 04:50:43 GMT",
+              "via": "1.1 vegur"
+          },
+          "Response Status": 404
+      }
+  ]
+}

@@ -1,10 +1,13 @@
-describe('Main Page User Flow', () => {
+describe('Individual Movie Page User Flow', () => {
 
-
+  // build intercept - make own json file with one movie
+  // check to see if it holds all data
+  // error handling testing
 
   beforeEach(() => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/*', { fixture: 'individualHappyMovie.json' })
     cy.visit('http://localhost:3000')
-      .contains('.movie-card', 'The New Mutants')
+      .contains('.movie-card', 'Cats & Dogs')
       .find('img')
       .click()
   });
@@ -37,8 +40,9 @@ describe('Main Page User Flow', () => {
 describe('Sad path testing', () => {
   
   beforeEach(() => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/*', { fixture: 'individualSadMovie.json' })
     cy.visit('http://localhost:3000')
-      .contains('.movie-card', 'Maratón After')
+      .contains('.movie-card', 'Cats & Dogs')
       .find('img')
       .click()
   });
