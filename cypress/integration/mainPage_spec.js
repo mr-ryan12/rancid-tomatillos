@@ -1,34 +1,35 @@
-describe('Main Page User Flow', () => {
 
+
+describe('Main Page User Flow', () => {
   beforeEach(() => {
+    cy.intercept("https://rancid-tomatillos.herokuapp.com/api/v2/movies", { fixture: 'movies.json'})
     cy.visit('http://localhost:3000')
-  });
+  })
 
   it('Should be able to visit the main page and the user will see the application name & fun tagline', () => {
     cy.contains('Rotten Tomatillos')
       .get('.text-focus-in')
       .contains('Where your imagination comes to life on the big screen')
   });
-
   
   it('Should display the poster image', () => {
     cy.get('img')
-      .should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//4BgSWFMW2MJ0dT5metLzsRWO7IJ.jpg')
+      .should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg')
   });
   
   it('Should display the movie title', () => {
     cy.get('.poster-movie-title')
-      .contains('Cats & Dogs 3: Paws Unite')
+      .contains('Money Plane')
   });
 
   it('Should have an alt text for the image', () => {
     cy.get('img')
-      .should('have.attr', 'alt', 'Movie Poster for Cats & Dogs 3: Paws Unite')
+      .should('have.attr', 'alt', 'Movie Poster for Money Plane')
   });
   
   it('Should display the release date', () => {
     cy.get('.poster-release-date')
-      .contains('10-02-2020')
+      .contains('09-29-2020')
   });
 
   // Find out how to test for formatting
@@ -37,32 +38,36 @@ describe('Main Page User Flow', () => {
   // });
 
   it('Should have a clickable poster image', () => {
-    cy.contains('.movie-card', 'Cats & Dogs 3: Paws Unite')
+    cy.contains('.movie-card', 'Money Plane')
       .find('img')
       .click()
   });
 
   it('Should display the average rating', () => {
     cy.get('.poster-average-rating')
-      .contains('7.00')
+      .contains('6.67')
   });
 
-  // Ask to see if this is necessary
-  // it('Should display the movies sorted by release date (newest to oldest)', () => {
-    
-  // });
-
+  
   it('Should not display the backdrop image', () => {
     cy.get('.image-container')
       .should('not.exist')
   });
-
-  // it('Should not display the movie id', () => {
-  //   cy.get('')
-  // });
-
-  it('Should display 40 movie cards', () => {
+  
+  it('Should display 3 movie cards', () => {
     cy.get('.movie-card')
-      .should('have.length', 40)
+      .should('have.length', 3)
+  });
+
+  it('Should display the movies sorted by release date (newest to oldest)', () => {
+    cy.get('.poster-release-date')
+      .first()
+      .contains('09-29-2020')
+    cy.get('.poster-release-date')
+      .eq(2)
+      .contains('08-20-2020')
+    cy.get('.poster-release-date')
+      .eq(1)
+      .contains('09-04-2020')
   });
 });

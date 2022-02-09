@@ -1,5 +1,7 @@
 describe('Main Page User Flow', () => {
 
+
+
   beforeEach(() => {
     cy.visit('http://localhost:3000')
       .contains('.movie-card', 'The New Mutants')
@@ -50,7 +52,7 @@ describe('Sad path testing', () => {
   it('Should display movie details for the individual movie selected', () => {
     cy.get('.individual-movie-container').contains('Maratón After')
     // cy.get('.individual-movie-container').contains(null)
-    cy.get('.individual-movie-container').contains('Overview: No overview available for this movie at this time! Please submit your version of the movie overview here')
+    cy.get('.individual-movie-container').contains('Overview: No overview available at this time')
     cy.get('.individual-movie-container').contains('Budget: N/A')
     cy.get('.individual-movie-container').contains('Genre: It\'s a mystery...')
     cy.get('.individual-movie-container').contains('Runtime: N/A')
