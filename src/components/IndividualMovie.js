@@ -2,23 +2,11 @@ import React from 'react'
 import '../styles/IndividualMovie.scss'
 
 const IndividualMovie = props => {
-  console.log(props)
   // const overviewDisplay = props.movie.overview === '' ? 
   //     <>
   //       No overview available for this movie at this time! Please submit your version of the movie overview <a href="http://www.turing.edu/contact" target="_blank">here</a>
   //     </> 
   //     : props.movie.overview
-
-  // const budgetFormat = props.movie.budget === 0 ? 'N/A' : `$${Intl.NumberFormat('en-US').format(props.movie.budget)}`
-  // const revenueFormat = props.movie.revenue === 0 ? 'N/A' : `$${Intl.NumberFormat('en-US').format(props.movie.revenue)}`
-  // const genresFormat = props.movie.genres.length === 0 ? 'It\'s a mystery...' : props.movie.genres.join(', ')
-  // const runtimeFormat = props.movie.runtime === 0 ? 'N/A' : `${props.movie.runtime} minutes`
-  // const ratingFormat = props.movie.average_rating.toFixed(2)
-  
-  // // const splitDate = props.movie.release_date.split('-')
-  // // let [year, month, day] = splitDate
-  // // const releaseDateFormat = [month, day, year].join('-')
-  // const backdropDisplay = props.movie.backdrop_path.includes('NoPhotoAvailable') ? props.movie.poster_path : props.movie.backdrop_path
 
   return (
     <section className="individual-movie-container">
