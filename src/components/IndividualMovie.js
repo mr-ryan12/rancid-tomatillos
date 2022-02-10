@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/IndividualMovie.scss'
+import { Link } 
 
 const IndividualMovie = props => {
   // const overviewDisplay = props.movie.overview === '' ? 
