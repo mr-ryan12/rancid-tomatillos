@@ -5,6 +5,7 @@ import ErrorModal from './components/ErrorModal'
 import { cleanAllMoviesData, cleanIndividualMovieData } from './utils'
 import { getAllMovies, getIndividualMovie } from './apiCalls'
 import './styles/App.scss'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -43,14 +44,22 @@ class App extends Component {
 
   render() {
     const errorModal = this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null
-    const displayMovie = !this.state.isSingleMovie ? <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} /> : <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>
 
     return (
       <main className="main-container">
         <h1 className='text-flicker-in-glow'>Rotten Tomatillos</h1>
         <h2 className="text-focus-in">Where your imagination comes to life on the big screen</h2>
+        <Route exact path='/' render={() => <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} />}/>
+        <Route exact path='/:id' render={({match}) => {
+          const foundMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
+          
+            if(foundMovie) {
+              return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>
+            } 
+          } 
+        }/>
         {errorModal}
-        {displayMovie}
+        
       </main>
     )
   }
