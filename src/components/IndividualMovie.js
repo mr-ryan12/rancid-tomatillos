@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/IndividualMovie.scss'
-import { Link } 
+import { Link } from 'react-router-dom'
 
 const IndividualMovie = props => {
   // const overviewDisplay = props.movie.overview === '' ? 
@@ -29,7 +29,7 @@ const IndividualMovie = props => {
             <p><span className="bold">Release Date:</span> {props.movie.release_date}</p>
           </section>
         </section>
-          <button className="home-button" onClick={() => props.displayHomePage()}>Home</button>
+          <Link to={'/'} className="home-button">Home</Link>
       </section>
       <div className="image-container"> 
         <img src={props.movie.backdrop_path} alt={`Poster for ${props.movie.title}`}/>

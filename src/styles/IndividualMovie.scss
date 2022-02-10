@@ -50,7 +50,18 @@
 }
 
 .home-button {
-  @include button($textColor, $backgroundColor);
+    width: 20%;
+    height: 10%;
+    border-radius: 15px;
+    background-color: $textColor;
+    color: $backgroundColor;
+    border: none;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    align-self: center;
+    padding-top: 11px;
 }
 
 .bold {
