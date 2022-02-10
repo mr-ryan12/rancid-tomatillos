@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Movies from './components/Movies'
 import IndividualMovie from './components/IndividualMovie'
 import ErrorModal from './components/ErrorModal'
+import { cleanAllMoviesData, cleanIndividualMovieData } from './utils'
+import { getAllMovies, getIndividualMovie } from './apiCalls'
 import './styles/App.scss'
 
 class App extends Component {
@@ -16,16 +18,9 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error('Something went wrong. Please refresh the page or try again later.')
-        }
-      })
+    getAllMovies()
       .then(data => {
-        this.setState({ movies: data.movies })
+        this.setState({ movies: cleanAllMoviesData(data.movies) })
       })
       .catch(error => {
         this.setState({ error: error.message })
@@ -33,16 +28,9 @@ class App extends Component {
   }
 
   displayIndividualMovie = id => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error('Something went wrong. Please refresh the page or try again later.')
-        }
-      })
+    getIndividualMovie(id)
       .then(data => {
-        this.setState({ isSingleMovie: true, movie: data.movie })
+        this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie) })
       })
       .catch(error => {
         this.setState({ error: error.message })
