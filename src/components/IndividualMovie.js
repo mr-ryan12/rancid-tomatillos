@@ -19,14 +19,14 @@ const IndividualMovie = props => {
           <p className="movie-overview"><span className="bold">Overview: </span>{props.movie.overview}</p>
         <section className="movie-details">
           <section className="movie-details-subcontainer">
-            <p><span className="bold">Budget:</span> {props.movie.budget}</p>
-            <p><span className="bold">Genre:</span> {props.movie.genres}</p>
-            <p><span className="bold">Runtime:</span> {props.movie.runtime}</p>
+            <p><span className="bold">Budget: </span> {props.movie.budget}</p>
+            <p><span className="bold">Genre: </span> {props.movie.genres}</p>
+            <p><span className="bold">Runtime: </span> {props.movie.runtime}</p>
           </section>
           <section className="movie-details-subcontainer">
-            <p><span className="bold">Revenue:</span> {props.movie.revenue}</p>
-            <p><span className="bold">Rating:</span> {props.movie.average_rating}</p>
-            <p><span className="bold">Release Date:</span> {props.movie.release_date}</p>
+            <p><span className="bold">Revenue: </span> {props.movie.revenue}</p>
+            <p><span className="bold">Rating: </span> {props.movie.average_rating}</p>
+            <p><span className="bold">Release Date: </span> {props.movie.release_date}</p>
           </section>
         </section>
           <Link to={'/'} className="home-button">Home</Link>
