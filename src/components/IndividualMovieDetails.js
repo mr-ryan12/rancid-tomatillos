@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/IndividualMovie.scss'
+import '../styles/Trailer.scss'
 
 const IndividualMovieDetails = props => {
   return (
@@ -11,6 +12,7 @@ const IndividualMovieDetails = props => {
           <h3 className="movie-tagline">{props.movie.tagline}</h3>
         </section>
           <p className="movie-overview"><span className="bold">Overview: </span>{props.movie.overview}</p>
+          <Link to={`/${props.movie.id}/trailer`} className="trailer-link">Watch Trailer</Link>
         <section className="movie-details">
           <section className="movie-details-subcontainer">
             <p><span className="bold">Budget: </span> {props.movie.budget}</p>

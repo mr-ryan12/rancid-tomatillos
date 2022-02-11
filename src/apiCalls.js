@@ -4,7 +4,7 @@ const getAllMovies = () => {
       if (response.ok) {
         return response.json()
       } else {
-        throw new Error('Something went wrong. Please refresh the page or try again later.')
+        throw new Error('Something went wrong. Please try again later.')
       }
     })
 }
@@ -15,7 +15,7 @@ const getIndividualMovie = id => {
       if (response.ok) {
         return response.json()
       } else {
-        throw new Error('Something went wrong. Please refresh the page or try again later.')
+        throw new Error('Something went wrong. Please try again later.')
       }
     })
 }

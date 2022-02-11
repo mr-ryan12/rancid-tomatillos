@@ -17,12 +17,12 @@ class IndividualMovie extends Component {
 
   componentDidMount = () => {
     getIndividualMovie(this.props.urlId)
-    .then(data => {
-      this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie) })
-    })
-    .catch(error => {
-      this.setState({ error: error.message })
-    })
+      .then(data => {
+        this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie) })
+      })
+      .catch(error => {
+        this.setState({ error: error.message })
+      })
   }
 
   render() {

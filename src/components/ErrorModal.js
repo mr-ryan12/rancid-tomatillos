@@ -1,12 +1,16 @@
 import React from 'react'
 import '../styles/ErrorModal.scss'
+import '../styles/IndividualMovie.scss'
+
+import { Link } from 'react-router-dom'
 
 const ErrorModal = props => {
+  console.log(props)
   return (
     <section className="error-modal">
       <section className="error-modal-box">
         <h2 className="error-message">{props.message}</h2>
-        <button className="refresh-button" onClick={() => window.location.reload()}>Refresh</button>
+        <Link to='/' className="home-button">Home</Link>
       </section>
     </section>
   )
