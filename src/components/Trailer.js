@@ -3,7 +3,7 @@ import '../styles/Trailer.scss'
 
 const Trailer = () => {
   return (
-    <section>
+    <section className="trailer-container">
       <iframe
         width="853"
         height="480"
