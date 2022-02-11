@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/Trailer.scss'
 
 const Trailer = () => {
@@ -13,6 +14,8 @@ const Trailer = () => {
         allowFullScreen
         title="Embedded youtube"
     />
+    <Link to='/' className="trailer-button">Home</Link>
+    <Link to='/:id' className="trailer-button">Movie Details</Link>
     </section>
   )
 }

@@ -39,7 +39,7 @@ class App extends Component {
     if (foundMovie) {
         return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage} urlId={match.params.id}/>
       } else {
-        return <ErrorModal message="'Something went wrong. Please try again later." displayHomePage={this.displayHomePage}/>
+        return <ErrorModal message="Something went wrong. Please try again later." displayHomePage={this.displayHomePage}/>
       }
   }
 
