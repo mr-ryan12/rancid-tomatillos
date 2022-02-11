@@ -5,7 +5,7 @@ import ErrorModal from './components/ErrorModal'
 import { cleanAllMoviesData } from './utils'
 import { getAllMovies } from './apiCalls'
 import './styles/App.scss'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Trailer from './components/Trailer'
 
 class App extends Component {
@@ -39,22 +39,25 @@ class App extends Component {
     if (foundMovie) {
         return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage} urlId={match.params.id}/>
       } else {
-        return <ErrorModal message="You entered in something incorrectly" displayHomePage={this.displayHomePage}/>
+        return <ErrorModal message="'Something went wrong. Please try again later." displayHomePage={this.displayHomePage}/>
       }
   }
 
   render() {
-    const errorModal = this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null
+    // const errorModal = this.state.error ? <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/> : null
 
     return (
       <main className="main-container">
         <h1 className='text-flicker-in-glow'>Rotten Tomatillos</h1>
         <h2 className="text-focus-in">Where your imagination comes to life on the big screen</h2>
-        <Route exact path='/' render={() => <Movies movies={this.state.movies}  />}/>
-        <Route exact path='/:id/' render={({match}) => this.findMovie(match)}/>
-        <Route exact path='/:id/trailer' render={() => <Trailer />}/>
-        {errorModal}
-        {/* <Route path='/:id' render={() => errorModal}/> */}
+        <Switch>
+          <Route exact path='/' render={() => <Movies movies={this.state.movies}  />}/>
+          <Route exact path='/:id/' render={({match}) => this.findMovie(match)}/>
+          <Route exact path='/:id/trailer' render={() => <Trailer />}/>
+          {/* This will be changed to a 404 component */}
+          <Route render={() => <h2>Hey there!</h2>}/>
+        </Switch>
+        {/* {errorModal} */}
       </main>
     )
   }
