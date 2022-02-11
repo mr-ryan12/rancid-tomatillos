@@ -53,7 +53,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <Movies movies={this.state.movies}  />}/>
           <Route exact path='/:id/' render={({match}) => this.findMovie(match)}/>
-          <Route exact path='/:id/trailer' render={() => <Trailer />}/>
+          <Route exact path='/:id/trailer' render={({match}) => <Trailer movie={match}/>}/>
           {/* This will be changed to a 404 component */}
           <Route render={() => <h2>Hey there!</h2>}/>
         </Switch>

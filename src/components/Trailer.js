@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Trailer.scss'
 
-const Trailer = () => {
+const Trailer = props => {
+  console.log(props.movie.params.id)
   return (
     <section className="trailer-container">
       <iframe
@@ -15,7 +16,7 @@ const Trailer = () => {
         title="Embedded youtube"
     />
     <Link to='/' className="trailer-button">Home</Link>
-    <Link to='/:id' className="trailer-button">Movie Details</Link>
+    <Link to={`/${props.movie.params.id}`} className="trailer-button">Movie Details</Link>
     </section>
   )
 }
