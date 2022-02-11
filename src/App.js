@@ -37,10 +37,12 @@ class App extends Component {
     const foundMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
           
     if (foundMovie) {
-        return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage} urlId={match.params.id}/>
-      } else {
-        return <ErrorModal message="Something went wrong. Please try again later." displayHomePage={this.displayHomePage}/>
-      }
+      return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage} urlId={match.params.id}/>
+    } 
+    if (this.state.error) {
+      return <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/>
+    }
+    return null
   }
 
   render() {
