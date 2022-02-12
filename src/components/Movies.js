@@ -13,7 +13,6 @@ const Movies = props => {
         title={movie.title}
         averageRating={movie.average_rating}
         releaseDate={movie.release_date}
-        findMovie={props.findMovie}
       />
     )
   })

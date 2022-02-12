@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import Movies from './components/Movies'
 import IndividualMovie from './components/IndividualMovie'
 import ErrorModal from './components/ErrorModal'
-import { cleanAllMoviesData, cleanIndividualMovieData } from './utils'
-import { getAllMovies, getIndividualMovie } from './apiCalls'
+import { cleanAllMoviesData } from './utils'
+import { getAllMovies } from './apiCalls'
 import './styles/App.scss'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import Trailer from './components/Trailer'
+import FourOhFour from './components/FourOhFour'
 
 class App extends Component {
   constructor() {
@@ -28,18 +30,24 @@ class App extends Component {
       })
   }
 
-  displayIndividualMovie = id => {
-    getIndividualMovie(id)
-      .then(data => {
-        this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie) })
-      })
-      .catch(error => {
-        this.setState({ error: error.message })
-      })
-  }
-
   displayHomePage = () => {
     this.setState({ isSingleMovie: false })
+  }
+
+  findMovie = (match, location) => {
+    const foundMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
+
+    if (foundMovie) {
+      return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage} urlId={match.params.id}/>
+    } 
+    if (this.state.error) {
+      return <ErrorModal message={this.state.error} displayHomePage={this.displayHomePage}/>
+    }
+    if (!location.key) {
+      return <FourOhFour />
+    }
+
+    return null
   }
 
   render() {
@@ -49,17 +57,13 @@ class App extends Component {
       <main className="main-container">
         <h1 className='text-flicker-in-glow'>Rotten Tomatillos</h1>
         <h2 className="text-focus-in">Where your imagination comes to life on the big screen</h2>
-        <Route exact path='/' render={() => <Movies movies={this.state.movies} findMovie={this.displayIndividualMovie} />}/>
-        <Route exact path='/:id' render={({match}) => {
-          const foundMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
-          
-            if(foundMovie) {
-              return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage}/>
-            } 
-          } 
-        }/>
+        <Switch>
+          <Route exact path='/' render={() => <Movies movies={this.state.movies}  />}/>
+          <Route exact path='/:id' render={({match, location}) => this.findMovie(match, location)}/>
+          <Route exact path='/:id/trailer' render={({match}) => <Trailer movie={match}/>}/>
+          <Route render={() => <FourOhFour />}/>
+        </Switch>
         {errorModal}
-        
       </main>
     )
   }

@@ -19,6 +19,7 @@
 }
 
 .movie-info {
+  height: 65vh;
   @include flexbox(column, nowrap, normal, space-between, normal);
   margin: 0 40px;
   flex: 1;
@@ -30,7 +31,7 @@
 
 .movie-details-subcontainer > p {
   margin-bottom: 10px;
-  font-size: $font20px;
+  font-size: 18px;
 }
 
 .movie-header-container {
@@ -49,9 +50,16 @@
   font-size: $font20px;
 }
 
-.home-button {
+.button-container {
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home-button,
+.trailer-link {
     width: 20%;
-    height: 10%;
+    height: 34%;
     border-radius: 15px;
     background-color: $textColor;
     color: $backgroundColor;
@@ -61,7 +69,11 @@
     text-align: center;
     text-decoration: none;
     align-self: center;
-    padding-top: 11px;
+    padding: 7px 5px 5px 5px;
+}
+
+.trailer-link {
+  width: 30%;
 }
 
 .bold {

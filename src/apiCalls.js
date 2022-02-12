@@ -4,7 +4,7 @@ const getAllMovies = () => {
       if (response.ok) {
         return response.json()
       } else {
-        throw new Error('Something went wrong. Please refresh the page or try again later.')
+        throw new Error('Something went wrong. Please try again later.')
       }
     })
 }
@@ -15,9 +15,20 @@ const getIndividualMovie = id => {
       if (response.ok) {
         return response.json()
       } else {
-        throw new Error('Something went wrong. Please refresh the page or try again later.')
+        throw new Error('Something went wrong. Please try again later.')
       }
     })
 }
 
-export { getAllMovies, getIndividualMovie }
+const getTrailer = id => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('Something went wrong.')
+      }
+    })
+}
+
+export { getAllMovies, getIndividualMovie, getTrailer }
