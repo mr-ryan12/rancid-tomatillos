@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getTrailer } from '../apiCalls'
 import Video from './Video'
 import '../styles/Trailer.scss'
+import { cleanTrailerData } from '../utils'
 
 class Trailer extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Trailer extends Component {
     getTrailer(this.props.movie.params.id)
       .then(data => {
         this.setState({
-          trailers: data.videos
+          trailers: cleanTrailerData(data.videos)
         })
       })
       .catch(error => console.log(error))

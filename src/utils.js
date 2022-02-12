@@ -38,4 +38,9 @@ const cleanIndividualMovieData = movie => {
   }
 }
 
-export { cleanAllMoviesData, cleanIndividualMovieData }
+const cleanTrailerData = trailers => {
+  const filteredTrailers = trailers.filter(trailer => trailer.key !== "dXd0eyrLS-A")
+  return filteredTrailers
+}
+
+export { cleanAllMoviesData, cleanIndividualMovieData, cleanTrailerData }
