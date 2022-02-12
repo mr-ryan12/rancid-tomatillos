@@ -10,14 +10,14 @@ describe('Error Display User Flow', () => {
       .contains('Where your imagination comes to life on the big screen')
   });
 
-  it('Should display an error modal when the URL is incorrect', () => {
+  it('Should display an error modal when there is an error', () => {
     cy.get('.error-message')
-      .should('have.text', 'Something went wrong. Please refresh the page or try again later.')
+      .should('have.text', 'Something went wrong. Please try again later.')
   });
 
-  it('Should have a refresh button in the error modal', () => {
-    cy.get('.refresh-button')
-      .contains('Refresh')
+  it('Should have a home button in the error modal', () => {
+    cy.get('.home-button')
+      .contains('Home')
   });
 
   it('Should display message for 500 error', () => {
@@ -25,11 +25,11 @@ describe('Error Display User Flow', () => {
     cy.visit('http://localhost:3000/')
 
     cy.get('.error-message')
-      .should('have.text', 'Something went wrong. Please refresh the page or try again later.')
+      .should('have.text', 'Something went wrong. Please try again later.')
   });
 
-  it('Should be able to click the refresh button', () => {
-    cy.get('.refresh-button')
+  it('Should be able to click the home button', () => {
+    cy.get('.home-button')
       .click()
   });
 });
