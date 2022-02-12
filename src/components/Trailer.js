@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { getTrailer } from '../apiCalls'
+import Video from './Video'
 import '../styles/Trailer.scss'
 
 class Trailer extends Component {
@@ -34,15 +35,13 @@ class Trailer extends Component {
   render() {
     const allTrailers = this.state.trailers.map(trailer => {
       return (
-        <iframe
+        <Video 
           key={trailer.id}
-          width="853"
-          height="480"
+          id={trailer.id}
+          movieId={trailer.movie_id}
           src={this.findVideoSource(trailer)}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Embedded youtube"
+          site={trailer.site}
+          type={trailer.type}
         />
       )
     })
