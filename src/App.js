@@ -59,7 +59,7 @@ class App extends Component {
         <h2 className="text-focus-in">Where your imagination comes to life on the big screen</h2>
         <Switch>
           <Route exact path='/' render={() => <Movies movies={this.state.movies}  />}/>
-          <Route exact path='/:id/' render={({match, location}) => this.findMovie(match, location)}/>
+          <Route exact path='/:id' render={({match, location}) => this.findMovie(match, location)}/>
           <Route exact path='/:id/trailer' render={({match}) => <Trailer movie={match}/>}/>
           <Route render={() => <FourOhFour />}/>
         </Switch>

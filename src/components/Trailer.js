@@ -33,6 +33,10 @@ class Trailer extends Component {
   }
 
   render() {
+    const catGif = <div className="gif-container">
+                      <p>Sorry, no trailers available for this movie at this time.</p>
+                      <iframe src="https://giphy.com/embed/qpCvOBBmBkble" className="cat-gif" allowFullScreen/>
+                    </div>
     const allTrailers = this.state.trailers.map(trailer => {
       return (
         <Video 
@@ -45,9 +49,10 @@ class Trailer extends Component {
         />
       )
     })
+    const checkTrailers = allTrailers.length === 0 ? catGif : allTrailers
     return (
       <section className="trailer-container">
-        {allTrailers}
+        {checkTrailers}
         <Link to='/' className="trailer-button">Home</Link>
         <Link to={`/${this.props.movie.params.id}`} className="trailer-button">Back to Movie Details</Link>
       </section>

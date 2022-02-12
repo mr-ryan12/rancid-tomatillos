@@ -30,3 +30,19 @@
   margin-bottom: 1%;
   padding-bottom: 1%;
 }
+
+.gif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  height: 400px;
+  margin: 20px 0;
+}
+
+.cat-gif {
+  height: 360px;
+  width: 480px;
+  border: none;
+}
