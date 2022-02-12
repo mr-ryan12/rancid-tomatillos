@@ -20,4 +20,15 @@ const getIndividualMovie = id => {
     })
 }
 
-export { getAllMovies, getIndividualMovie }
+const getTrailer = id => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('Something went wrong.')
+      }
+    })
+}
+
+export { getAllMovies, getIndividualMovie, getTrailer }

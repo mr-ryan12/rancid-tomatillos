@@ -23,7 +23,11 @@ class IndividualMovie extends Component {
       .catch(error => {
         this.setState({ error: error.message })
       })
+
+    
   }
+
+
 
   render() {
     const modalForDisplay = this.state.error ? <ErrorModal message={this.state.error}/> : <IndividualMovieDetails movie={this.state.movie}/>
