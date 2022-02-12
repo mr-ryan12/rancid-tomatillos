@@ -5,7 +5,6 @@ import '../styles/IndividualMovie.scss'
 import { Link } from 'react-router-dom'
 
 const ErrorModal = props => {
-  console.log(props)
   return (
     <section className="error-modal">
       <section className="error-modal-box">

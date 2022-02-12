@@ -4,6 +4,7 @@ import '../styles/Video.scss'
 const Video = props => {
   return (
     <iframe
+      className="video"
       width="853"
       height="480"
       src={props.src}
