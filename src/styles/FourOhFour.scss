@@ -1,0 +1,42 @@
+// <iframe src="https://giphy.com/embed/Zf9oMBBf3eRTW" width="480" height="458" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-attack-sneaky-Zf9oMBBf3eRTW">via GIPHY</a></p>
+
+@import '_variables.scss';
+
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  height: 400px;
+  margin: 20px 0;
+}
+
+.four-oh-four-gif {
+  height: 360px;
+  width: 480px;
+  border: none;
+  margin-bottom: 1%;
+}
+
+.four-oh-four-message {
+  margin-bottom: 1%;
+}
+
+.home-button {
+  width: 12%;
+  height: 5%;
+  border-radius: 15px;
+  background-color: $textColor;
+  color: $backgroundColor;
+  border: none;
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  align-self: center;
+  padding-top: 11px;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+}

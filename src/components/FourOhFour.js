@@ -5,9 +5,10 @@ import '../styles/FourOhFour.scss'
 const FourOhFour = () => {
   return (
     <section className="message-container">
-      <h2>Oops!</h2>
-      <p>So sorry, that doesn't exist</p>
-      <Link to='/'>Back to Safety</Link>
+      <h2>404 Error: Page not found</h2>
+      <p className="four-oh-four-message">So sorry, that URL does not exist</p>
+      <iframe src="https://giphy.com/embed/Zf9oMBBf3eRTW" className="four-oh-four-gif" allowFullScreen />
+      <Link to='/' className="home-button">Back to Home</Link>
     </section>
   )
 }
