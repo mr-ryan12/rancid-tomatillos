@@ -72,10 +72,10 @@ describe('Trailer Page User Flow Sad Path', () => {
     cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details')
   })
 
-//   it('should route to the home page when home button is pressed', () => {
-//       cy.get('.trailer-container').find('.back-home-button').contains('Home').click()
-//       cy.url('http://localhost:3000')
-//   })
+  it('should route to the home page when home button is pressed', () => {
+      cy.get('.trailer-container').find('.back-home-button').contains('Home').click()
+      cy.url('http://localhost:3000')
+  })
 
 //     it('should route to the individual movie page when Back to Movie Details is pressed', () => {
 //       cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details').click()
