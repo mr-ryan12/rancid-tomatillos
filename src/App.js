@@ -3,11 +3,11 @@ import Movies from './components/Movies'
 import IndividualMovie from './components/IndividualMovie'
 import ErrorModal from './components/ErrorModal'
 import { cleanAllMoviesData } from './utils'
-import { getAllMovies } from './apiCalls'
 import './styles/App.scss'
 import { Route, Switch } from 'react-router-dom'
 import Trailer from './components/Trailer'
 import FourOhFour from './components/FourOhFour'
+import getData from './apiCalls'
 
 class App extends Component {
   constructor() {
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    getAllMovies()
+    getData('movies')
       .then(data => {
         this.setState({ movies: cleanAllMoviesData(data.movies) })
       })

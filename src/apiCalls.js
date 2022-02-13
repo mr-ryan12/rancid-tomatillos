@@ -1,5 +1,5 @@
-const getAllMovies = () => {
-  return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+const getData = path => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}`)
     .then(response => {
       if (response.ok) {
         return response.json()
@@ -9,26 +9,4 @@ const getAllMovies = () => {
     })
 }
 
-const getIndividualMovie = id => {
-  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(response => {
-      if (response.ok) {
-        return response.json()
-      } else {
-        throw new Error('Something went wrong. Please try again later.')
-      }
-    })
-}
-
-const getTrailer = id => {
-  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
-    .then(response => {
-      if (response.ok) {
-        return response.json()
-      } else {
-        throw new Error('Something went wrong.')
-      }
-    })
-}
-
-export { getAllMovies, getIndividualMovie, getTrailer }
+export default getData

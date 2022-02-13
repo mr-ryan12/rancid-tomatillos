@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { getTrailer } from '../apiCalls'
+// import { getTrailer } from '../apiCalls'
 import Video from './Video'
 import '../styles/Trailer.scss'
 import { cleanTrailerData } from '../utils'
+import getData from '../apiCalls'
 
 class Trailer extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Trailer extends Component {
   }
 
   componentDidMount = () => {
-    getTrailer(this.props.movie.params.id)
+    getData(`movies/${this.props.movie.params.id}/videos`)
       .then(data => {
         this.setState({
           trailers: cleanTrailerData(data.videos)

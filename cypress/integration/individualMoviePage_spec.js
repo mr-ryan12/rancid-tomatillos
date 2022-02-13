@@ -30,14 +30,23 @@ describe('Individual Movie Page User Flow', () => {
 
   it('Should return to the home page by clicking the home button', () => {
     cy.get('.individual-movie-container').find('.home-button').click()
-    .url().should('eq', 'http://localhost:3000/')
+      .url().should('eq', 'http://localhost:3000/')
   });
 
-    it('Should route to the trailer page by clicking the Watch Trailers button', () => {
+  it('Should route to the trailer page by clicking the Watch Trailers button', () => {
     cy.get('.individual-movie-container').find('.trailer-link').click()
-    .url().should('eq', 'http://localhost:3000/340102/trailer')
+      .url().should('eq', 'http://localhost:3000/340102/trailer')
   });
 
+  it('Should go back when pressing back button', () => {
+    cy.go('back')
+      .url().should('eq', 'http://localhost:3000/')
+  });
+
+  it('Should go forward when pressing forward button', () => {
+    cy.go('forward')
+      .url().should('eq', 'http://localhost:3000/726739')
+  });
 });
 
 describe('Sad path testing', () => {
@@ -72,11 +81,21 @@ describe('Sad path testing', () => {
 
   it('Should return to the home page by clicking the home button', () => {
     cy.get('.individual-movie-container').find('.home-button').click()
-    .url().should('eq', 'http://localhost:3000/')
+      .url().should('eq', 'http://localhost:3000/')
   });
 
   it('Should route to the trailer page by clicking the Watch Trailers button', () => {
     cy.get('.individual-movie-container').find('.trailer-link').click()
-    .url().should('eq', 'http://localhost:3000/737173/trailer')
+      .url().should('eq', 'http://localhost:3000/737173/trailer')
+  });
+
+  it('Should go back when pressing back button', () => {
+    cy.go('back')
+      .url().should('eq', 'http://localhost:3000/')
+  });
+
+  it('Should go forward when pressing forward button', () => {
+    cy.go('forward')
+      .url().should('eq', 'http://localhost:3000/726739')
   });
 });

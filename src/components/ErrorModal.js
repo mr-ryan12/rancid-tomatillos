@@ -9,7 +9,6 @@ const ErrorModal = props => {
     <section className="error-modal">
       <section className="error-modal-box">
         <h2 className="error-message">{props.message}</h2>
-        <Link to='/' className="home-button">Home</Link>
       </section>
     </section>
   )

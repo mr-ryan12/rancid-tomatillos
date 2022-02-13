@@ -39,13 +39,18 @@ const cleanIndividualMovieData = movie => {
 }
 
 const cleanTrailerData = trailers => {
-  const filteredTrailers = trailers.filter(trailer => trailer.key !== "dXd0eyrLS-A")
-  const filteredTrailersTwo = filteredTrailers.filter(trailer => trailer.key !== "u2ncERi6TgU")
-  const filteredTrailersThree = filteredTrailersTwo.filter(trailer => trailer.key !== "iQKaY8G9VpQ")
-  const filteredTrailersFour = filteredTrailersThree.filter(trailer => trailer.key !== "_A-6qcgExA4")
+  const filteredTrailers = trailers.filter(trailer => {
+    if (trailer.key !== 'dXd0eyrLS-A'
+      && trailer.key !== 'u2ncERi6TgU'
+      && trailer.key !== 'iQKaY8G9VpQ'
+      && trailer.key !== '_A-6qcgExA4'
+      && trailer.key !== '255250498'
+      && trailer.key !== 'J885t4B3PmI') {
+        return trailer
+    }
+  })
 
-
-  return filteredTrailersFour
+  return filteredTrailers
 }
 
 export { cleanAllMoviesData, cleanIndividualMovieData, cleanTrailerData }
