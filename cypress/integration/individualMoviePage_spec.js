@@ -25,11 +25,19 @@ describe('Individual Movie Page User Flow', () => {
     cy.get('.individual-movie-container').contains('Release Date: 08-26-2020')
     cy.get('.individual-movie-container').find('img').should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//eCIvqa3QVCx6H09bdeOS8Al2Sqy.jpg')
     cy.get('.individual-movie-container').find('.home-button').contains('Home')
+    cy.get('.individual-movie-container').find('.trailer-link').contains('Watch Trailer')
   });
 
   it('Should return to the home page by clicking the home button', () => {
     cy.get('.individual-movie-container').find('.home-button').click()
+    .url().should('eq', 'http://localhost:3000/')
   });
+
+    it('Should route to the trailer page by clicking the Watch Trailers button', () => {
+    cy.get('.individual-movie-container').find('.trailer-link').click()
+    .url().should('eq', 'http://localhost:3000/340102/trailer')
+  });
+
 });
 
 describe('Sad path testing', () => {
@@ -59,9 +67,16 @@ describe('Sad path testing', () => {
     cy.get('.individual-movie-container').contains('Release Date: 09-03-2020')
     cy.get('.individual-movie-container').find('img').should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//opZKcgocttEOAUzqluX3bUbbDew.jpg')
     cy.get('.individual-movie-container').find('.home-button').contains('Home')
+    cy.get('.individual-movie-container').find('.trailer-link').contains('Watch Trailer')
   });
 
   it('Should return to the home page by clicking the home button', () => {
     cy.get('.individual-movie-container').find('.home-button').click()
+    .url().should('eq', 'http://localhost:3000/')
+  });
+
+  it('Should route to the trailer page by clicking the Watch Trailers button', () => {
+    cy.get('.individual-movie-container').find('.trailer-link').click()
+    .url().should('eq', 'http://localhost:3000/737173/trailer')
   });
 });

@@ -54,8 +54,8 @@ class Trailer extends Component {
     return (
       <section className="trailer-container">
         {checkTrailers}
-        <Link to='/' className="trailer-button">Home</Link>
-        <Link to={`/${this.props.movie.params.id}`} className="trailer-button">Back to Movie Details</Link>
+        <Link to='/' className="back-home-button trailer-button">Home</Link>
+        <Link to={`/${this.props.movie.params.id}`} className="back-to-movie-button trailer-button">Back to Movie Details</Link>
       </section>
     )
   }
