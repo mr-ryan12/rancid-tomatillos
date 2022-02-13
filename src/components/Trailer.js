@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import { getTrailer } from '../apiCalls'
 import Video from './Video'
 import '../styles/Trailer.scss'
 import { cleanTrailerData } from '../utils'

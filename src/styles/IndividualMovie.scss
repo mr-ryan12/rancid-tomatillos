@@ -58,17 +58,7 @@
 
 .home-button,
 .trailer-link {
-    width: 20%;
-    height: 34%;
-    border-radius: 15px;
-    background-color: $textColor;
-    color: $backgroundColor;
-    border: none;
-    font-size: 21px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    align-self: center;
+    @include button(20%, 34%, $textColor, $backgroundColor);
     padding: 7px 5px 5px 5px;
 }
 
