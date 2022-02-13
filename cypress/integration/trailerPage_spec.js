@@ -4,10 +4,10 @@ describe('Trailer Page User Flow', () => {
     cy.visit('http://localhost:3000')
       .contains('.movie-card', 'Cats & Dogs')
       .find('img')
-      .click()
+      .click().wait(45)
       .get('.button-container')
       .find('.trailer-link')
-      .click().wait(45)
+      .click()
  
   });
 
@@ -26,5 +26,14 @@ describe('Trailer Page User Flow', () => {
     cy.get('.trailer-container').find('.back-home-button').contains('Home')
     cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details')
   })
-  
+
+  it('should route to the home page when home button is pressed', () => {
+      cy.get('.trailer-container').find('.back-home-button').contains('Home').click()
+      cy.url('http://localhost:3000')
+  })
+
+    it('should route to the individual movie page when Back to Movie Details is pressed', () => {
+      cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details').click()
+      cy.url('http://localhost:3000/726739')
+  })
 });
