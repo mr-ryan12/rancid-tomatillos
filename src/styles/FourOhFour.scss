@@ -1,44 +1,27 @@
 @import '_variables.scss';
+@import '_mixins.scss';
 
 
 .message-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  @include flexbox(column, nowrap, normal, space-between, center);
   font-size: 20px;
   height: 400px;
   margin: 20px 0;
 }
 
 .four-oh-four-gif {
-  height: 360px;
-  width: 480px;
+  @include widthHeight(360px, 480px);
   border: none;
-  margin-bottom: 1%;
+  margin-bottom: $percentBottom;
 }
 
 .four-oh-four-message {
-  margin-bottom: 1%;
+  margin-bottom: $percentBottom;
 }
 
 .four-oh-four-home-button {
-  width: 12%;
-  height: 5%;
-  border-radius: 15px;
-  background-color: $textColor;
-  color: $backgroundColor;
-  border: none;
-  font-size: 21px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  align-self: center;
+  @include button(12%, 5%, $textColor, $backgroundColor);
   padding-top: 11px;
-  margin-bottom: 1%;
-  padding-bottom: 1%;
-  &:hover {
-    transform: scale(1.07);
-    transition-duration: .15s;
-  }
+  margin-bottom: $percentBottom;
+  padding-bottom: $percentBottom;
 }
