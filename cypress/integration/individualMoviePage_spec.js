@@ -30,11 +30,14 @@ describe('Individual Movie Page User Flow', () => {
 
   it('Should return to the home page by clicking the home button', () => {
     cy.get('.individual-movie-container').find('.home-button').click()
+    .url().should('eq', 'http://localhost:3000/')
   });
 
     it('Should route to the trailer page by clicking the Watch Trailers button', () => {
     cy.get('.individual-movie-container').find('.trailer-link').click()
+    .url().should('eq', 'http://localhost:3000/340102/trailer')
   });
+
 });
 
 describe('Sad path testing', () => {
@@ -69,9 +72,11 @@ describe('Sad path testing', () => {
 
   it('Should return to the home page by clicking the home button', () => {
     cy.get('.individual-movie-container').find('.home-button').click()
+    .url().should('eq', 'http://localhost:3000/')
   });
-  
+
   it('Should route to the trailer page by clicking the Watch Trailers button', () => {
     cy.get('.individual-movie-container').find('.trailer-link').click()
+    .url().should('eq', 'http://localhost:3000/737173/trailer')
   });
 });
