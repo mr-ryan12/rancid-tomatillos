@@ -36,4 +36,9 @@ describe('Trailer Page User Flow', () => {
       cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details').click()
       cy.url('http://localhost:3000/726739')
   })
+
+  it('should play a video if clicked', () => {
+      cy.get('.video').first().wait(300).trigger('dblclick', 'center')
+  })
+
 });
