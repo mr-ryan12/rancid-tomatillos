@@ -15,7 +15,7 @@
   &:hover {
     transform: scale(1.07);
     transition-duration: .15s;
-    box-shadow: 5px 5px 25px gold;
+    box-shadow: 5px 5px 25px $textColor;
   }
   cursor: pointer;
 }
