@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import '../styles/IndividualMovie.scss'
-import { getIndividualMovie } from '../apiCalls'
+// import { getIndividualMovie } from '../apiCalls'
 import { cleanIndividualMovieData } from '../utils.js'
 import ErrorModal from './ErrorModal'
 import IndividualMovieDetails from './IndividualMovieDetails'
 import FourOhFour from './FourOhFour'
+import getData from '../apiCalls'
 
 class IndividualMovie extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class IndividualMovie extends Component {
   }
 
   componentDidMount = () => {
-    getIndividualMovie(this.props.urlId)
+    getData(`movies/${this.props.urlId}`)
       .then(data => {
         this.setState({ isSingleMovie: true, movie: cleanIndividualMovieData(data.movie) })
       })
