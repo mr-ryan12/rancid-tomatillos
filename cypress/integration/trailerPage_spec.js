@@ -82,9 +82,9 @@ describe('Trailer Page User Flow Sad Path', () => {
       cy.url('http://localhost:3000/726739')
   })
 
-//   it('should display Sad path messaging', () => {
-//       cy.get('.gif-container')
-//       .contains('Sorry, no trailers available for this movie at this time.')
-//   })
+  it('should display Sad path messaging', () => {
+      cy.get('.gif-container')
+      .contains('Sorry, no trailers available for this movie at this time.')
+  })
 
 });
