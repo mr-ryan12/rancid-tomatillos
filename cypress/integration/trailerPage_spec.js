@@ -67,10 +67,10 @@ describe('Trailer Page User Flow Sad Path', () => {
     .should('have.length', 0)
   })
 
-//    it('should display 2 buttons at the bottom of the page', () => {
-//     cy.get('.trailer-container').find('.back-home-button').contains('Home')
-//     cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details')
-//   })
+   it('should display 2 buttons at the bottom of the page', () => {
+    cy.get('.trailer-container').find('.back-home-button').contains('Home')
+    cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details')
+  })
 
 //   it('should route to the home page when home button is pressed', () => {
 //       cy.get('.trailer-container').find('.back-home-button').contains('Home').click()
