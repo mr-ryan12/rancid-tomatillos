@@ -15,21 +15,11 @@ describe('Error Display User Flow', () => {
       .should('have.text', 'Something went wrong. Please try again later.')
   });
 
-  it('Should have a home button in the error modal', () => {
-    cy.get('.home-button')
-      .contains('Home')
-  });
-
   it('Should display message for 500 error', () => {
     cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { statusCode: 500 })
     cy.visit('http://localhost:3000/')
 
     cy.get('.error-message')
       .should('have.text', 'Something went wrong. Please try again later.')
-  });
-
-  it('Should be able to click the home button', () => {
-    cy.get('.home-button')
-      .click()
   });
 });
