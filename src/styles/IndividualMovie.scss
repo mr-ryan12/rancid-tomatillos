@@ -70,6 +70,10 @@
     text-decoration: none;
     align-self: center;
     padding: 7px 5px 5px 5px;
+    &:hover {
+    transform: scale(1.07);
+    transition-duration: .15s;
+  }
 }
 
 .trailer-link {
