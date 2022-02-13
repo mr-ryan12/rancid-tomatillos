@@ -7,14 +7,26 @@
     align-items: $alignItems;
 }
 
-@mixin button($buttonBackground, $buttonText) {
-    width: 20%;
+@mixin button($width, $height, $buttonBackground, $buttonText) {
+    width: $width;
     align-self: center;
-    height: 10%;
+    height: $height;
     border-radius: 15px;
     background-color: $buttonBackground;
     color: $buttonText;
     border: none;
     font-size: 21px;
     font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    align-self: center;
+    &:hover {
+        transform: scale(1.07);
+        transition-duration: .15s;
+    }
+}
+
+@mixin widthHeight($width, $height) {
+    height: $height;
+    width: $width;  
 }
