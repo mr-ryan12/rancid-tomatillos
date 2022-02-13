@@ -33,7 +33,7 @@ describe('Trailer Page User Flow Happy Path', () => {
 
     it('Should route to the individual movie page when Back to Movie Details is pressed', () => {
         cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details').click()
-        cy.url('http://localhost:3000/726739')
+          .url().should('eq', 'http://localhost:3000/726739')
     });
 
     it('Should play a video if clicked', () => {
