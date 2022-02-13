@@ -87,4 +87,8 @@ describe('Trailer Page User Flow Sad Path', () => {
       .contains('Sorry, no trailers available for this movie at this time.')
   })
 
+  it('should display a crying cat', () => {
+     cy.get('iframe')
+      .should('have.attr', 'src', 'https://giphy.com/embed/qpCvOBBmBkble') 
+  })
 });
