@@ -62,10 +62,10 @@ describe('Trailer Page User Flow Sad Path', () => {
       .contains('Where your imagination comes to life on the big screen')
   });
 
-//   it('should display all working trailers available for the movie', () => {
-//     cy.get('.video')
-//     .should('have.length', 0)
-//   })
+  it('should display all working trailers available for the movie', () => {
+    cy.get('.video')
+    .should('have.length', 0)
+  })
 
 //    it('should display 2 buttons at the bottom of the page', () => {
 //     cy.get('.trailer-container').find('.back-home-button').contains('Home')
