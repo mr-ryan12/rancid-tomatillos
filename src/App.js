@@ -35,7 +35,11 @@ class App extends Component {
   }
 
   findMovie = (match, location) => {
-    const foundMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
+    const foundMovie = this.state.movies.find(movie => {
+      if (match.params.id.length === 6 && movie.id === parseInt(match.params.id)) {
+        return movie
+      }
+    })
 
     if (foundMovie) {
       return <IndividualMovie movie={this.state.movie} displayHomePage={this.displayHomePage} urlId={match.params.id}/>
