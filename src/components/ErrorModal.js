@@ -2,8 +2,6 @@ import React from 'react'
 import '../styles/ErrorModal.scss'
 import '../styles/IndividualMovie.scss'
 
-import { Link } from 'react-router-dom'
-
 const ErrorModal = props => {
   return (
     <section className="error-modal">

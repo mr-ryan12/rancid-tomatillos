@@ -15,7 +15,7 @@ describe('Error Display User Flow', () => {
       .should('have.text', 'Something went wrong. Please try again later.')
   });
 
-  it('Should display message for 500 error', () => {
+  it('Should display message for broken GET request', () => {
     cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { statusCode: 500 })
     cy.visit('http://localhost:3000/')
 

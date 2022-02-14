@@ -1,6 +1,7 @@
 describe('Trailer Page User Flow Happy Path', () => {
     beforeEach(() => {
         cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/726739/videos', { fixture: 'trailerHappyPath.json' })
+          .wait(45)
         cy.visit('http://localhost:3000')
           .contains('.movie-card', 'Cats & Dogs')
           .find('img')
@@ -8,6 +9,7 @@ describe('Trailer Page User Flow Happy Path', () => {
           .get('.button-container')
           .find('.trailer-link')
           .click()
+          .wait(45)
     });
 
     it('Should be able to visit the trailer page and the user will see the application name & fun tagline', () => {
@@ -54,13 +56,15 @@ describe('Trailer Page User Flow Happy Path', () => {
 describe('Trailer Page User Flow Sad Path', () => {
     beforeEach(() => {
         cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/726739/videos', { fixture: 'trailerSadPath.json' })
+          .wait(45)
         cy.visit('http://localhost:3000')
-        .contains('.movie-card', 'Cats & Dogs')
-        .find('img')
-        .click().wait(45)
-        .get('.button-container')
-        .find('.trailer-link')
-        .click()
+          .contains('.movie-card', 'Cats & Dogs')
+          .find('img')
+          .click().wait(45)
+          .get('.button-container')
+          .find('.trailer-link')
+          .click()
+          .wait(45)
     });
 
     it('Should be able to visit the trailer page and the user will see the application name & fun tagline', () => {
