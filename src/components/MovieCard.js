@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const MovieCard = props => {
   return (
-    <section className="movie-card" tabIndex={0}>
+    <section className="movie-card">
       <Link to={`/${props.id}`} >
         <img src={props.posterImg} alt={`Movie Poster for ${props.title}`} className='movie-image' />
       </Link>
