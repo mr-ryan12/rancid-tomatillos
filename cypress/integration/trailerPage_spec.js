@@ -13,14 +13,9 @@ describe('Trailer Page User Flow Happy Path', () => {
     });
 
     it('Should be able to visit the trailer page and the user will see the application name & fun tagline', () => {
-        cy.contains('Rotten Tomatillos')
+        cy.contains('Rancid Tomatillos')
           .get('.text-focus-in')
           .contains('Where your imagination comes to life on the big screen')
-    });
-
-    it('Should display all working trailers available for the movie', () => {
-        cy.get('.video')
-          .should('have.length', 11)
     });
 
     it('Should display 2 buttons at the bottom of the page', () => {
@@ -68,7 +63,7 @@ describe('Trailer Page User Flow Sad Path', () => {
     });
 
     it('Should be able to visit the trailer page and the user will see the application name & fun tagline', () => {
-        cy.contains('Rotten Tomatillos')
+        cy.contains('Rancid Tomatillos')
           .get('.text-focus-in')
           .contains('Where your imagination comes to life on the big screen')
     });
@@ -91,11 +86,6 @@ describe('Trailer Page User Flow Sad Path', () => {
     it('Should route to the individual movie page when Back to Movie Details is pressed', () => {
         cy.get('.trailer-container').find('.back-to-movie-button').contains('Back to Movie Details').click()
         cy.url('http://localhost:3000/726739')
-    });
-
-    it('Should display Sad path messaging', () => {
-        cy.get('.gif-container')
-          .contains('Sorry, no trailers available for this movie at this time.')
     });
 
     it('Should display a crying cat', () => {

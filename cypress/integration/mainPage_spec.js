@@ -5,7 +5,7 @@ describe('Main Page User Flow', () => {
   })
 
   it('Should be able to visit the main page and the user will see the application name & fun tagline', () => {
-    cy.contains('Rotten Tomatillos')
+    cy.contains('Rancid Tomatillos')
       .get('.text-focus-in')
       .contains('Where your imagination comes to life on the big screen')
   });
