@@ -30,7 +30,7 @@ class Trailer extends Component {
     if (trailer.site === 'Vimeo') {
       return `https://player.vimeo.com/video/${trailer.key}`
     } else if (trailer.site === 'YouTube') {
-      return `http://www.youtube.com/embed/${trailer.key}`
+      return `https://www.youtube.com/embed/${trailer.key}`
     }
     return null
   }
