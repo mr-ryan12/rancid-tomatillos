@@ -11,7 +11,9 @@
 
 ## Abstract
 
-Welcome to Rancid Tomatillos! This is an application that lets users view a list of 40 movies, learn more about them in further detail and watch their trailers.
+Welcome to Rancid Tomatillos! This is an application that lets users view a list of 40 movies, learn more about them in further detail and watch their trailers.  
+  
+View the deployed application [here](https://rancid-tomatillos-2022.herokuapp.com/)
 
 ## Screenshots  
 View of the home page  
@@ -46,7 +48,8 @@ SCSS
 - You can close your local server at any time by pressing `CTRL + c` in the terminal window running your server
    
 ## Links  
-Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)  
+Checkout the deployed application [here](https://rancid-tomatillos-2022.herokuapp.com/)
 
 ## Challenges and Wins  
 This was our first project using React, React Router and Cypress for testing. Overall, we are pleased with the outcome, but would like to get more comfortable using these new technologies. It was fun learning about error handling with React and new ways to use Cypress for End-to-End testing. 
