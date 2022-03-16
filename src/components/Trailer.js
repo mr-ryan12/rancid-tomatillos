@@ -10,7 +10,8 @@ class Trailer extends Component {
     super(props)
 
     this.state = {
-      trailers: []
+      trailers: [],
+      hasTrailers: ''
     }
   }
 
@@ -18,7 +19,8 @@ class Trailer extends Component {
     getData(`movies/${this.props.movie.params.id}/videos`)
       .then(data => {
         this.setState({
-          trailers: cleanTrailerData(data.videos)
+          trailers: cleanTrailerData(data.videos),
+          hasTrailers: cleanTrailerData(data.videos).length > 0 ? true : false
         })
       })
       .catch(error => console.log(error))
@@ -33,27 +35,37 @@ class Trailer extends Component {
     return null
   }
 
-  render() {
+  checkTrailers = () => {
     const catGif = <div className="gif-container">
-                      <p>Sorry, no trailers available for this movie at this time.</p>
-                      <iframe src="https://giphy.com/embed/qpCvOBBmBkble" className="cat-gif" allowFullScreen/>
-                    </div>
+                     <p>Sorry, no trailers available for this movie at this time.</p>
+                     <iframe src="https://giphy.com/embed/qpCvOBBmBkble" className="cat-gif" allowFullScreen/>
+                   </div>
     const allTrailers = this.state.trailers.map(trailer => {
-      return (
-        <Video 
-          key={trailer.id}
-          id={trailer.id}
-          movieId={trailer.movie_id}
-          src={this.findVideoSource(trailer)}
-          site={trailer.site}
-          type={trailer.type}
-        />
-      )
-    })
-    const checkTrailers = allTrailers.length === 0 ? catGif : allTrailers
+    return (
+      <Video 
+        key={trailer.id}
+        id={trailer.id}
+        movieId={trailer.movie_id}
+        src={this.findVideoSource(trailer)}
+        site={trailer.site}
+        type={trailer.type}
+      />
+    )
+  })
+
+  if (this.state.hasTrailers === '') {
+    return ''
+  } else if (this.state.hasTrailers) {
+    return allTrailers
+  } else {
+    return catGif
+  }
+}
+
+  render() {
     return (
       <section className="trailer-container">
-        {checkTrailers}
+        {this.checkTrailers()}
         <Link to='/' className="back-home-button trailer-button">Home</Link>
         <Link to={`/${this.props.movie.params.id}`} className="back-to-movie-button trailer-button">Back to Movie Details</Link>
       </section>

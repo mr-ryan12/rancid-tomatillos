@@ -59,7 +59,7 @@ class App extends Component {
 
     return (
       <main className="main-container">
-        <h1 className='text-flicker-in-glow'>Rotten Tomatillos</h1>
+        <h1 className='text-flicker-in-glow'>Rancid Tomatillos</h1>
         <h2 className="text-focus-in">Where your imagination comes to life on the big screen</h2>
         <Switch>
           <Route exact path='/' render={() => <Movies movies={this.state.movies}  />}/>
