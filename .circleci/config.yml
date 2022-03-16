@@ -2,6 +2,7 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+########### LINES 6-27 ARE WORKING #########
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 # jobs:
@@ -24,7 +25,7 @@ version: 2.1
 #   say-hello-workflow:
 #     jobs:
 #       - say-hello
-
+#################################################
 
 # Examples test
 orbs:
@@ -32,4 +33,4 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run
+      - cypress-io/run
