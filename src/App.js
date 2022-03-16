@@ -34,6 +34,7 @@ class App extends Component {
     this.setState({ isSingleMovie: false })
   }
 
+  // Error handling
   findMovie = (match, location) => {
     const foundMovie = this.state.movies.find(movie => {
       if (match.params.id.length === 6 && movie.id === parseInt(match.params.id)) {
