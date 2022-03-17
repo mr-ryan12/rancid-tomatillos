@@ -33,5 +33,4 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run:
-        start: test
+      - cypress/run
