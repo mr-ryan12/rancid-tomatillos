@@ -33,6 +33,4 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run:
-        start: npm start
-        wait-on: 'http://localhost:3000'
+      - cypress/run
